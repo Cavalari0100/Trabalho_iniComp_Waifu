@@ -1,0 +1,124 @@
+/* Nota para o co-desenvolvedor: Jão, favor comentar as funções do formulário explicando a utlidade de cada uma */
+#conteudo {
+    display: flex;
+    padding: 0.8rem 0 1.7rem 0;
+    width: 100%;
+    background-color: white;
+}
+
+input {
+    margin-left: 7px;
+    max-width: 382px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.conteudo_geral .borda {
+    position: relative;
+    margin-top: -1.2rem;
+    margin-left: 0.4rem;
+    border-bottom: 2px solid #828282;
+    /* Nota para o co-desenvolvedor: Você pode tentar silver ou outros tons de cinza também */
+    display: block;
+}
+
+.conteudo_geral .borda::before {
+    position: absolute;
+    bottom: -2px;
+    content: '';
+    height: 2px;
+    width: 0;
+    left: 50%;
+    background: steelblue;
+    transition: all 150ms ease;
+    z-index: 1;
+}
+
+.conteudo_geral label {
+    position: absolute;
+    margin: -1.7rem 0 0 0.15rem;
+    padding-left: 0.4rem;
+    pointer-events: none;
+    font-size: 1.25rem;
+    z-index: 1;
+    color: #808080;
+    /* Nota para o co-desenvolvedor: Você pode tentar silver ou outros tons de cinza também */
+    transition: all 0.28s ease;
+}
+
+.conteudo_geral .apoio {
+    margin-left: 14px;
+    font-family: 'arial';
+    font-size: 12px;
+    color: #808080;
+    /* Nota para o co-desenvolvedor: Você pode tentar silver ou outros tons de cinza também */
+}
+
+.conteudo_geral input {
+    display: block;
+    background: none;
+    padding: 1rem 0.125rem 0.0625rem;
+    font-size: 1rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    color: gray;
+    transition: all 0.28s ease;
+}
+
+.conteudo_geral input:focus {
+    outline: none;
+    /* Código para tirar outiline de input por motivos de: Chrome é babaca e coloca outline em inputs alheios quando em foco, maior vacilo */
+}
+
+.conteudo_geral input:focus~label,
+.conteudo_geral input:valid~label {
+    padding-left: 0.35rem;
+    font-size: 0.8rem;
+    margin-top: -2.6rem;
+}
+
+.conteudo_geral input:focus~label {
+    color: steelblue;
+}
+
+.conteudo_geral input:focus~.borda::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Configuração de flex para elementos de classe flex */
+.flex {
+    display: flex;
+}
+
+/* Configuração de fonte para qualquer elemento com id="a" */
+#a {
+    font-family: arial;
+}
+
+/* Classe para configuração dos nossos inputs de tipo range */
+.telefone {
+    margin-top: 45px;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    cursor: pointer;
+}
+
+/* Estilo para barra dos inputs de tipo range, mas só funciona no Firefox */
+.telefone::-moz-range-track {
+    margin: 17px 0;
+    border-radius: 1px;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(56, 56, 56, 0.3);
+}
+
+
+/* Estilo para a seção de progresso da barra dos inputs de tipo range. Firefox melhor navegador, saio no soco com quem disser o contrário */
+.telefone::-moz-range-progress {
+    border-radius: 1px;
+    height: 2px;
+    background-color: rgb( 33, 150, 243);
+}

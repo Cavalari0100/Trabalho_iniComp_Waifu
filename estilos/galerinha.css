@@ -1,0 +1,202 @@
+/* Media querry para ajustes em menores dimensões de tela */
+@media only screen and (max-width: 900px) {
+    .tabs {
+        width: 100%;
+    }
+
+    .tabs > div > section {
+        border-top-right-radius: 0;
+    }
+
+    .tabs > div > a {
+        font-size: 0.9rem;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        width: calc(25vw - 2.8px);
+    }
+
+    .galeria {
+        margin-left: -2rem;
+        grid-template-columns: repeat(auto-fit, minmax(80%, 90%));
+        grid-auto-rows: 8.5%;
+    }
+
+    .volta {
+        text-decoration: none;
+        margin: 1rem 0 0 2.5rem;
+        padding: 1.1rem 0 2.5rem 0;
+        width: 100%;
+        color: black;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    
+    .volta:hover {
+        box-shadow: 0 0.4em 1.2em rgba(0, 0, 0, 0.1), 0 0.2em 0.5rem rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px) scale(1.05);
+        filter: saturate(105%) brightness(108%);
+    }
+}
+/* Media querry para ajustes em maiores dimensões de tela */
+@media only screen and (min-width: 900px) {
+    .tabs {
+        width: 94%;
+    }
+
+    .tabs > div > a {
+        padding: 10px 55px;
+    }
+
+        
+    .foto-alta {
+        grid-row: span 2/auto;
+    }
+
+    .foto-larga {
+        grid-column: span 2/auto;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(8%, 15%));
+        grid-auto-rows: 45%;
+    }
+
+    .volta {
+        position: absolute;
+        text-decoration: none;
+        background-color: transparent !important;
+        right: 0;
+        margin: 5px 15px; 
+    }
+}
+
+/* Configuração da classe container principal */
+.tabs {
+    height: auto;
+    min-height: 86vh;
+    margin: 2rem auto auto auto;
+    position: relative;
+}
+
+/* Estilo das âncoras de seleção das tabs */
+    /* Estilo base */
+    .tabs > div > a {
+        text-decoration: none;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        z-index: 2;
+        position: relative;
+        float: left;
+        color: black;
+        background: white;
+        display: block;
+        border-left: 1px solid midnightblue;
+        border-right: 1px solid midnightblue;
+        border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ajuste de estilo da borda para a âncora da extremidade esquerda */
+    .tabs > div:first-child > a {
+        border-left: 2px solid midnightblue;
+    }
+
+    /* Ajuste de estilo da borda para a âncora da extremidade direita */
+    .tabs > div:last-child > a {
+        border-right: 2px solid midnightblue;
+}
+/* Estilo das âncoras de seleção das tabs END */
+
+/* Animação das âncoras não selecionadas on :hover */
+    /* Animação base */
+    .tabs > div:not(:target) > a:hover {
+        background: linear-gradient(#5f9bcd 80%, steelblue);
+        border-left: 1px solid #37378e;
+        border-right: 1px solid #37378e;
+    }
+
+    /* Ajuste da borda para a âncora da extremidade esquerda */
+    .tabs > div:first-child:not(:target) > a:hover {
+        border-left: 2px solid #37378e;
+    }
+
+    /* Ajuste da borda para a âncora da extremidade direita */
+    .tabs > div:last-child:not(:target) > a:hover {
+        border-right: 2px solid #37378e;
+    }
+/* Animação das âncoras não selecionadas on :hover END */
+
+/* Configuração de estilo para âncoras não selecionadas */
+.tabs > div:not(:target) > a {
+    border-bottom: 0;
+    background: linear-gradient(steelblue 80%, rgb(60, 110, 170));
+}
+
+/* Configuração de estilo para a âncoras selecionada no momento */
+.tabs > div:target > a {
+    border-right: 2px solid silver; border-left: 2px solid silver;
+    background: white;
+}
+
+/* Configuração de estilo para as diferentes seções dentro das tabs */
+.tabs > div > section {
+    background: white;
+    box-shadow: 0 0.8rem 1rem 0.5rem rgba(0,0,0,0.04);
+    border-radius: 4px; border-top-left-radius: 0;
+    top: 40px; right: 0; bottom: 0; left: 0;
+    padding: 20px;
+}
+
+/* Configuração que faz as nossas tabs funcionarem */
+    /* Para uma tab não selecionada, garantimos que o usuário não possa ver nem interagir com ela */
+    .tabs > div:not(:target) > section {
+        position: absolute;
+        pointer-events: none; /* Retira a interatividade */
+    }
+
+    /* Para uma tab selecionada, garantimos que o usuário possa ver e também interagir com ela */
+    .tabs > div:target > section {
+        position: absolute;
+        pointer-events: all; /* Restaura a interatividade */
+        z-index: 1; /* Sobrepõe essa tab às demais */
+    }
+/* Configuração que faz as nossas tabs funcionarem END */
+
+/* Configuração principal da grid da galeria */
+.galeria { 
+    display: grid;
+    gap: 1rem;
+}
+
+/* Configuração de estilo para os membros da grid */
+.foto {
+    height: 100%;
+    width: 100%;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    transform: all 600ms ease;
+    overflow: hidden;
+}
+
+/* Configuração de interação on :hover para os membros da grid */
+.foto:hover {
+    box-shadow: 0 0.4em 1.2em rgba(0, 0, 0, 0.1), 0 0.2em 0.5rem rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Configuração de filtro on :hover para os membros da grid */
+.foto:hover > #filtro {
+    opacity: 0.2 !important;
+}
+
+/* Configuração que mostra o texto on :hover em membros da grid */
+.foto:hover > figcaption {
+    opacity:1 !important;
+    z-index:1;
+    transition: all 0.2s;
+}

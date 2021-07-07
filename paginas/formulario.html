@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> Formulário de inscrição </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../estilos/formulario.css'>
+</head>
+
+<body style="background: whitesmoke; padding:0;margin:0;width:100%;">
+    <main>
+        <header style="width: 100%;margin-top: -20px; height: 60px; background: #383838;">
+            <h2 align="center" style="padding:15px; color: whitesmoke;"> Entre agora no Fan-clube da sua Waifu! </h2>
+        </header>
+        <!--Inicio do formulario de cadastro-->
+        <font face="'arial'" color="white">
+            <div id="conteudo">
+                <table align="center" width="200" style="overflow:auto;" cellpadding="10" cellspacing="2">
+                    <div>
+                        <tr class="conteudo_geral">
+                            <td colspan="2">
+                                <input name="nome" type="text" size="25" required="required" />
+                                <label>Nome</label>
+                                <span class="apoio">Digite seu nome e Sobrenome</span>
+                                <i class="borda"></i>
+                            </td>
+                        </tr>
+                        <tr class="conteudo_geral">
+                            <td colspan="2">
+                                <input name="email" type="email" size="25" required="required" />
+                                <label>Email</label>
+                                <span class="apoio">Digite seu email</span>
+                                <i class="borda"></i>
+                            </td>
+                        </tr>
+                        <tr class="conteudo_geral">
+                            <td>
+                                <input style="max-width: 245px;" name="cartao_num" type="password" size="25" required="required" />
+                                <label>Numero do cartão</label>
+                                <span class="apoio">Digite o numero do seu cartão</span>
+                                <i class="borda" style="width: 250px;"></i>
+                            </td>
+                            <td>
+                                <input style="max-width: 104px;" name="cartao_cvv" type="password" size="15" required="required" />
+                                <label>CVV</label>
+                                <span class="apoio">N° de segurança</span>
+                                <i class="borda" style="width: 110px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label style="position:absolute;margin-top:15px;color: #808080;">Número de telefone</label><span id="a" style="position:absolute;margin-top:42px;margin-left:-18px;color:#808080;">(0) 000000001</span><input class="telefone" name="telefone" type="range" min="1" max="99999999999">
+                                <span id="a" style="position: absolute;margin-top: 42px; margin-left: 10px;color: #808080;">(99) 999999999</span>
+                            </td>
+                        </tr>
+                        <tr class="conteudo_geral">
+                            <td>
+                                <input style="max-width: 245px;" name="endereço" type="text" size="25" required="required" />
+                                <label>Endereço</label>
+                                <span class="apoio">Digite seu Endereço</span>
+                                <i class="borda" style="width: 250px;"></i>
+                            </td>
+                            <td>
+                                <input style="max-width: 104px;" name="num_end" type="number" size="25" required="required" />
+                                <label>N°</label>
+                                <span class="apoio">N° da residencia</span>
+                                <i class="borda" style="width: 110px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label style="position:absolute;margin-top:15px;color: #808080;">Número de telefone da mãe</label><span id="a" style="position:absolute;margin-top:42px;margin-left:-18px;color:#808080;">(0) 000000001</span><input class="telefone" name="telefone" type="range" min="1" max="99999999999">
+                                <span id="a" style="position: absolute;margin-top: 42px; margin-left: 10px;color: #808080;">(99) 999999999</span>
+                            </td>
+                        </tr>
+                    </div>
+
+
+                        <!--
+                        <br>
+                        <div class="conteudo_geral">
+                            <div>
+                                <input name="nome" type="text" size="25" required="required" />
+                                <label>Nome</label>
+                                <span class="apoio">Digite seu nome e Sobrenome</span>
+                                <i class="borda" style="width: 250px;"></i>
+                            </div>
+                            <br>
+                            <div>
+                                <input name="email" type="email" size="25" required="required" />
+                                <label>Email</label>
+                                <span class="apoio">Digite seu email</span>
+                                <i class="borda" style="width: 250px;"></i>
+                            </div>
+                            <br>
+                            <div class="flex">
+                                <div>
+                                    <input name="cartao_num" type="tel" size="25" required="required" />
+                                    <label>Numero do cartão</label>
+                                    <span class="apoio">Digite o numero do seu cartão</span>
+                                    <i class="borda" style="width: 250px;"></i>
+                                </div>
+                                <br>
+                                <div>
+                                    <input id="min" name="cartao_cvv" type="tel" size="15" required="required" />
+                                    <label>CVV</label>
+                                    <span class="apoio">N° de segurança</span>
+                                    <i class="borda" style="width: 100px;"></i>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="flex">
+                                <div>
+                                    <input name="endereço" type="text" size="25" required="required" />
+                                    <label>Endereço</label>
+                                    <span class="apoio">Digite seu Endereço</span>
+                                    <i class="borda" style="width: 250px;"></i>
+                                </div>
+                                <div>
+                                    <input id="min" name="num_end" type="number" size="25" required="required" />
+                                    <label>N°</label>
+                                    <span class="apoio">N° da residencia</span>
+                                    <i class="borda" style="width: 100px;"></i>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div> -->
+
+                        <!-- O resto do formulário eu deixo cntg, nego -->
+
+                </table>
+            </div>
+        </font>
+    </main>
+</body>
+
+</html>

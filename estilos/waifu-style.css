@@ -1,0 +1,578 @@
+/* Esconde qualquer overflow geral do body no eixo x */
+body {
+    overflow-x: hidden;
+}
+
+/* Modal */
+    /* Configurações do efeito do modal */
+    .modal {
+        position: fixed;
+        top: 0;right: 0;bottom: 0;left: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        z-index: 10;
+        opacity:0;
+        transition: opacity 300ms ease-in;
+        background: rgba(0,0,0,0.8);
+        pointer-events: none;
+    }
+
+    /* Inicia o efeito do modal on target */
+    .modal:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Configurações do modal própriamente dito */
+    .modal > article {
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: auto;
+        border-radius: 5px;
+        width: 90vw;
+        height: 85vh;
+        position: absolute;
+        padding:0;
+        background: #fff;
+    }
+
+    /* Botões modal */
+        /* Configurações do botão cancelar atrelado ao modal */
+        .cancelar {
+            text-decoration: none;
+            position: absolute;
+            padding: 5px 10px;
+            line-height: 25px;
+            right: 7px;
+            bottom: 5px;
+            text-align: center;
+            margin-top: 5px;
+            background: #383838;
+            border-radius: 4px;
+            font-size: 16px;
+            color: whitesmoke;
+        }
+
+        /* Animação do botão cancelar atrelado ao modal */
+        .cancelar:hover {
+            background: #181818;
+        }
+
+        /* Configurações do botão enviar atrelado ao modal */
+        .enviar {
+            text-decoration: none;
+            position: absolute;
+            padding: 5px 10px;
+            line-height: 25px;
+            right: 94px;
+            bottom: 5px;
+            text-align: center;
+            margin-top: 5px;
+            background: steelblue;
+            border-radius: 4px;
+            font-size: 16px;
+            color: whitesmoke;
+        }
+    /* Botões modal END */
+/* Modal END */
+
+/* Estrelas */
+    /* Animação do botão enviar atrelado ao modal */
+    .enviar:hover {
+        background: #315b7d;
+    }
+
+    /* Configuração do span que serve de container para nossas estrelas */
+    .estrelas {
+        display: flex;
+        flex-direction:row-reverse;
+        font-size: 0;
+    }
+
+    /* Configuração de tamanho de fonte para elementos dentro do span */
+    .estrelas * {
+        font-size: 1.8rem;
+    }
+
+    /* Configuração dos elementos input e label dentro de nosso span */
+    .estrelas > input + label {
+        display: inline-block;
+        overflow: hidden;
+        width: 1em;
+        cursor: pointer;
+        padding-bottom: 20px;
+    }
+
+    /* Cria as estrelas não selecionadas com :before */
+    .estrelas > input + label:before {
+        display: inline-block;
+        content: "☆";
+        color: gray;
+    }
+
+    /* Transforma as estrelas em estrelas cheias a partir da seleção ou do hover do input */
+    .estrelas > input:checked ~ label:before, .estrelas > input + label:hover ~ label:before, .estrelas > input + label:hover:before {
+        content: "★";
+        color: gold;
+        text-shadow: 0 0 1px #383838;
+    }
+
+    /* Ajuste de tamanho e margem para a estrela que recebe o hover */
+    .estrelas > input + label:hover {
+        margin: -5px -5px 0 -4px;
+        font-size: 2.2rem;
+        padding-left: 2.5px;
+        padding-bottom: 15px;
+    }
+/* Estrelas END */
+
+/* Configuração imagem no topo da página */
+.imagem-fixa {
+    margin-left:0;
+    width:100%;
+    height: 35rem;
+    background: var(--bkg1) no-repeat center fixed;
+    background-size: var(--bkg1-cfg);
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+}
+
+/* Configuração imagem no fim da página */
+.imagem-fixa#fim {
+    background: var(--bkg2) no-repeat center fixed;
+    background-size: var(--bkg2-cfg);
+}
+
+/* Configuração do título da página em cima da imagem fixa */
+.titulo-pagina {
+    width: 800px;
+    color: whitesmoke;
+    top: 0;
+    position: absolute;
+    left: 50vw;
+    margin-left: -400px;
+}
+
+/* Configuração de cabeçalho do tipo h2 dentro do título da página */
+.titulo-pagina h2 {
+    text-shadow: 0.25rem 0.5rem 0.35rem rgba(0, 0, 0, 0.3);
+}
+
+/* Configuração da âncora que abre o modal de inscrição */
+.inscricao {
+    position: absolute;
+    margin: 2.7rem 0 0 50%;
+    padding: 1.15rem;
+    text-align: center;
+    transform: translate(-50%);
+    border-radius: 2rem;
+    box-shadow: 0 5px 0 rgb(139,0,0);
+    background-color: darkorange;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Configuração do texto em cima da âncora que abre o modal de inscrição */
+.inscricao:before {
+    content: "Se inscreva no Fan clube dessa waifu!";
+    cursor: default;
+    pointer-events: none;
+    position: absolute;
+    font-size: 12px;
+    width: 350px;
+    margin: -35px 0 0 -95px;
+}
+
+/* Configuração da animação de hover da âncora que abre o modal de inscrição */
+.inscricao:hover {
+    background-color: orangered;
+}
+
+/* Media querry para ajustes em menores dimensões de tela */
+@media only screen and (max-width: 900px) {
+    /* Ajuste de proporção do corpo da pagina */
+    .paginamid {
+        width: 100%;
+    }
+
+    /* Ajuste de tamanho do título */
+    .titulo-pagina {
+        top: 3rem;
+    }
+
+    /* Ajuste de tamanho do primeiro componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(1) {
+        font-size: 12vw;
+    }
+
+    /* Ajuste de tamanho do segundo componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(2) {
+        font-size: 14px;
+        margin-top: -1.5rem;
+    }
+
+    /* Ajuste de estilo do terceiro componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(3) {
+        font-size: 18px;
+    }
+
+    /* Ajuste para não mostrar o texto do sistema de estrelas em telas menores */
+    .estrelas span:last-child {
+        display: none;
+    }
+
+    /* Ajuste de tamanho para o container de nosso slide-show de fan-arts */
+    .fanart-container p {
+        position: absolute;
+        text-align: right;
+        right: 10%;
+        padding-top: 1rem;
+        max-width: 50%;
+    }
+
+    /* Ajuste de tamanho da imagem em nosso slide-show de fan-arts */
+    .fanart {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Filtro para deixar o texto sobre nosso slide-show de fan-arts mais visível */
+    .fanart > #filtro {
+        display: 1;
+    }
+
+    /* Ajuste de margem da âncora que leva a um link com a fonte de onde foram tiradas todas as fan-arts utilizadas em na tela */
+    .fanart-fonte {
+        position: absolute;
+        width: 50px;
+        text-align: center;
+        margin: 31rem calc(50% - 45px);
+    }
+
+    /* Ajuste da proporção da barra de pesquisa falsa */
+    .barra-pesquisa {
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    /* Ajuste da posição dos ícones da barra de pesquisa */
+    .icone-google {
+        right: calc(9% + 2rem);
+    }
+    .icone-google:nth-of-type(2) {
+        right: 9%;
+    }
+
+    .resultados-pesquisa {
+        overflow: scroll;
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+/* Media querry para ajustes em maiores dimensões de tela */
+@media only screen and (min-width: 900px) {
+    /* Ajuste de tamanho do primeiro componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(1) {
+        font-size: 10rem;
+    }
+
+    /* Ajuste de tamanho do segundo componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(2) {
+        font-size: 16px;
+        margin-top: -8rem;
+    }
+
+    /* Ajuste de estilo do terceiro componente h2 dentro do título */
+    .titulo-pagina > h2:nth-of-type(3) {
+        font-size: 20px;
+    }
+
+    .fanart-container {
+        justify-content: center;
+    }
+
+    /* Ajuste de estilo do paragrafo ao lado de nosso slide-show de fan-arts */
+    .fanart-container p {
+        right: 14%;
+        padding-top: 11rem;
+        max-width: 40%;
+    }
+
+    /* Ajuste de tamanho da imagem de nosso slide-show de fan-arts */
+    .fanart {
+        margin-top: 0;
+        min-width: 380px;
+        max-width: 500px;
+        width: 30%;
+    }
+
+    /* Não usaremos o filtro em telas maiores, uma vez que o texto não está mais posicionado sobre as imagens */
+    .fanart > #filtro {
+        display: none;
+    }
+
+    /* Ajuste de margem da âncora que leva a um link com a fonte de onde foram tiradas todas as fan-arts utilizadas em na tela */
+    .fanart-fonte {
+        position: absolute;
+        margin: 32rem 21% 0 0;
+    }
+
+    /* Ajuste da proporção da barra de pesquisa falsa */
+    .barra-pesquisa {
+        margin: auto;
+        width: 45%;
+        min-width: 450px;
+    }
+
+    /* Ajuste da posição dos ícones da barra de pesquisa */
+    .icone-google {
+        right: calc(29.5% + 2.3rem);
+    }
+    .icone-google:nth-of-type(2) {
+        right: 29.5%;
+    }
+
+    .resultados-pesquisa {
+        margin: auto;
+        width: 45%;
+        min-width: 450px;
+    }
+}
+
+.titulo-pagina > h2:nth-of-type(3) {
+    border-radius: 4px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    background: rgba(70, 130, 180,0.3);
+}
+
+/* Configuração do container de nosso slide-show de fan-arts */
+.fanart-container {
+    display: flex;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 36rem;
+}
+
+/* Configuração do paragrafo ao lado de nosso slide-show de fan-arts */
+.fanart-container p {
+    font-size: 22px;
+}
+
+/* Âncora que leva a um link com a fonte de onde foram tiradas todas as fan-arts utilizadas em na tela */
+.fanart-fonte {
+    z-index: 1;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    background-color: darkorange;
+    box-shadow: 0 5px 0 rgb(139,0,0);
+    border-radius: 5px;
+}
+
+/* Animação on hover da âncora que leva a um link com a fonte de onde foram tiradas todas as fan-arts utilizadas em na tela */
+.fanart-fonte:hover {
+    background-color: orangered;
+}
+
+/* Configuração da imagem de nosso slide-show de fan-arts */
+.fanart {
+    padding: 0;
+    height: 100%;
+    animation: fanart-slideshow 20s infinite linear;
+}
+
+/* Configuração da animação da imagem que possibilita nosso slide-show de fan-arts */
+@keyframes fanart-slideshow {
+    0% { /* Frame 5 - Fanart 10 */
+        background: var(--fanart5) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    0.5% { /* Frame 1 - Fanart 1 */
+        background: var(--fanart1) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    7% { /* Frame 2 - Fanart 1 */
+        background: var(--fanart1) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    13% { /* Frame 3 - Fanart 1 */
+        background: var(--fanart1) no-repeat center;
+        background-size: cover;
+    }
+    19% { /* Frame 4 - Fanart 1 */
+        background: var(--fanart1) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    20% { /* Frame 5 - Fanart 1 */
+        background: var(--fanart1) no-repeat center -50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    20.5% { /* Frame 1 - Fanart 2 */
+        background: var(--fanart2) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    27% { /* Frame 2 - Fanart 2 */
+        background: var(--fanart2) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    33% { /* Frame 3 - Fanart 2 */
+        background: var(--fanart2) no-repeat center;
+        background-size: cover;
+    }
+    39% { /* Frame 4 - Fanart 2 */
+        background: var(--fanart2) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    40% { /* Frame 5 - Fanart 2 */
+        background: var(--fanart2) no-repeat center -50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    40.5% { /* Frame 1 - Fanart 3 */
+        background: var(--fanart3) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    47% { /* Frame 2 - Fanart 3 */
+        background: var(--fanart3) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    53% { /* Frame 3 - Fanart 3 */
+        background: var(--fanart3) no-repeat center;
+        background-size: cover;
+    }
+    59% { /* Frame 4 - Fanart 3 */
+        background: var(--fanart3) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    60% { /* Frame 5 - Fanart 3 */
+        background: var(--fanart3) no-repeat center -50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    60.5% { /* Frame 1 - Fanart 4 */
+        background: var(--fanart4) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    67% { /* Frame 2 - Fanart 4 */
+        background: var(--fanart4) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    73% { /* Frame 3 - Fanart 4 */
+        background: var(--fanart4) no-repeat center;
+        background-size: cover;
+    }
+    79% { /* Frame 4 - Fanart 4 */
+        background: var(--fanart4) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    80% { /* Frame 5 - Fanart 4 */
+        background: var(--fanart4) no-repeat center -50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    80.5% { /* Frame 1 - Fanart 5 */
+        background: var(--fanart5) no-repeat center 50px;
+        opacity: 0;
+        background-size: cover;
+    }
+    87% { /* Frame 2 - Fanart 5 */
+        background: var(--fanart5) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    93% { /* Frame 3 - Fanart 5 */
+        background: var(--fanart5) no-repeat center;
+        background-size: cover;
+    }
+    99% { /* Frame 4 - Fanart 5 */
+        background: var(--fanart5) no-repeat center;
+        opacity: 1;
+        background-size: cover;
+    }
+    100% { /* Frame 5 - Fanart 5 */
+        background: var(--fanart5) no-repeat center -50px;
+        opacity: 0;
+        background-size: cover;
+    }
+}
+
+/* Manipulação das massas */
+    /* Configuração do container de nossos resultados falsos de pesquisa */
+    .google-container {
+        width: 100%;
+        height: 32rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Barra de pesquisa */
+        /* Configuração da nossa falsa barra de pesquisa do google */
+        .barra-pesquisa {
+            cursor: text;
+            margin-top: 3rem;
+            height: 42px;
+            background: white;
+            border: 1px solid lightgray;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            transition: box-shadow 0.1s;
+        }
+
+        /* Esconde o texto do segundo span dentro de nossa barra de pesquisa */
+        .barra-pesquisa span:nth-child(2) {
+            opacity: 0;
+        }
+
+        /* Animação simples de hover de nossa falsa barra de pesquisa */
+        .barra-pesquisa:hover {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mostra o texto do segundo span a partir da interação com a falsa barra de pesquisa */
+        .barra-pesquisa:active > span:nth-child(2) {
+            opacity: 1;
+        }
+
+        /* Esconde o texto do primeiro span a partir da interação com a falsa barra de pesquisa */
+        .barra-pesquisa:active > span:first-child {
+            opacity: 0;
+        }
+
+        /* Configuração dos ícones em nossa falsa barra de pesquisa do google */
+        .icone-google {
+            pointer-events: none;
+            -webkit-user-drag: none;
+            height:30px;
+            position:absolute;
+            padding-top:6px;
+        }
+    /* Barra de pesquisa END */
+
+    /* Resultados de pesquisa */
+        /* Configuração dos nossos falsos resultados de pesquisa do google */
+        .resultados-pesquisa {
+            margin-top: 2.2rem;
+            height: 20rem;
+            background: white;
+            border: 1px solid lightgray;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+/* Manipulação das massas END */

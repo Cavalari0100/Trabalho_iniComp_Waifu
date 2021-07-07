@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> Um certo índice mágico </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./estilos/main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background:whitesmoke;padding:0;margin:0;width:100%;overflow-x:hidden !important;">
+    <a name="inicio"></a>
+    <!-- Cabeçalho da página || telas grandes -->
+    <header id="max" class="cabecalho">
+        <!-- Título e easter egg -->
+        <nav style="display: flex;">
+            <a style="text-decoration:none;" href="./index.html"><h1>MIR - Top 4 Waifus</h1></a>
+            <img src="assets/waifu.gif" style="margin-left:25px;width:55px;height:55px;opacity:0;transition:opacity 0.5s ease;"></img>
+        </nav>
+        <!-- Opções de navegação local -->
+        <ul class="opcoes">
+            <li>
+            <a href="#waifus">Waifus</a>
+            </li>
+            <li>
+            <a href="#tabela">Tabela</a>
+            </li>
+            <li>
+            <a href="#tags">Etiquetas</a>
+            </li>
+            <li class="li-volta">
+            <a id="volta" href="#inicio"><span>🡹 </span>Voltar ao Início<span> 🡹</span></a>
+            </li>
+        </ul>
+    </header>
+    <!-- Cabeçalho da página || telas pequenas -->
+    <header id="min" class="cabecalho">
+        <!-- Título e easter egg -->
+        <nav style="display: flex;">
+            <a style="text-decoration:none;" href="./index.html"><h1>MIR - Top 4 Waifus</h1></a>
+            <img src="assets/waifu.gif" style="margin-left:25px;width:55px;height:55px;opacity:0;transition:opacity 0.5s ease;"></img>
+        </nav>
+        <!-- Botão que parece um hambúrguer -->
+        <input id="hamburguer" style="display: none;" type="checkbox"/>
+        <label for="hamburguer"><i class="fa fa-bars" style="margin-top:12px;font-size:30px;color:white"></i></label>
+        <!-- Menu de dropdown -->
+        <nav class="hamburguer-dropdown">
+            <!-- Opções de navegação local -->
+            <a href="#waifus">Waifus</a>
+            <a href="#tabela">Tabela</a>
+            <a href="#tags">Etiquetas</a>
+            <a href="#inicio"><span>🡹 </span>Voltar ao Início<span> 🡹</span></a>
+        </nav>
+    </header>
+    <!-- Cabeçalhos END -->
+    <!-- Corpo da página PT.1 -->
+    <main class="paginaini">
+        <aside style="height: 15rem;"><!-- Esse aside só existe por motivos de intervalo --></aside>
+        <!-- Navegação por cartas para seleção de waifu -->
+        <section  class="baralho">
+            <!-- Modelo de carta de waifu
+            <article id="a" class="carta" href="Waifu 1">
+                 -- Âncora que possibilita que a carta redirecione o usuário para outra página, sendo usada para navegação --
+                <a class="nav-carta" href="./paginas/waifu-template.html">
+                      -- Foto da waifu que a carta representa --
+                    <figure class="waifu-pic"><img class="pic" src="https://i.imgur.com/g8mRIWx.jpg"></img></figure>
+                      -- Texto de resumo sobre a waifu --
+                    <p class="resumo"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nisi placerat, vulputate lectus quis, viverra urna. Sed quis hendrerit massa, blandit dignissim tellus. Ut porta pellentesque lorem.</p>
+                      -- Tags para a waifu em questão --
+                    <footer class="tags">
+                        <a href="testeTAG">tag 1</a>
+                        <span>tag 1</span>
+                        <a href="testeTAG">tag 2</a>
+                        <span>tag 2</span>
+                        <a href="testeTAG">tag 3</a>
+                        <span>tag 3</span>
+                    </footer>
+                </a>
+            </article>
+              -- Modelo de carta de waifu END -->
+            
+            <!-- Demais cartas presentes na lista/baralho -->
+            <!-- Carta -->
+            <article id="b" class="carta" href="Yoruichi">
+                <a class="nav-carta" href="./paginas/yoruichi.html">
+                    <figure class="waifu-pic"><img class="pic" style="height: 180%;" src="./assets/waifus/yoruichi1.jpeg"></img> <!-- ARRUMAR aqui e no CSS -->
+                    </figure>
+                    <p class="resumo"> Ex-capitã da 2ª Divisão do Gotei 13, ela trabalha com Kisuke Urahara e Tessai Tsukabishi para ajudar ambos. Foi a primeira mulher a se tornar líder do clã Shihouin.</p>
+                    <footer class="tags">
+                        <a href="#tomboy">Tomboy</a>
+                        <span>Tomboy</span>
+                        <a href="#onmitsukidō">Onmitsukidō</a>
+                        <span>Onmitsukidō</span>
+                    </footer>
+                </a>
+            </article>
+            <!-- Carta Rukia Kuchiki -->
+            <article id="c" class="carta" href="Rukia">
+                <a class="nav-carta" href="./paginas/rukia.html">
+                    <figure class="waifu-pic"><img style="height: 120%;" class="pic" src="./assets/waifus/rukia1.jpg"></img></figure>
+                    <p class="resumo"> Uma shinigami imprevisível, durona, corajosa e teimosa, do 13° Esquadrão, sob o comando de Ukitake Juushirou. Faz parte da Família Kuchiki, a mais rica e importante família da Soul Society.</p>
+                    <footer class="tags">
+                        <a href="#tomboy">Tomboy</a>
+                        <span>Tomboy</span>
+                        <a href="#shinigami">Shinigami</a>
+                        <span>Shinigami</span>
+                    </footer>
+                </a>
+            </article>
+            <!-- Carta Marisa Kirisame -->
+            <article id="d" class="carta" href="Marisa">
+                <a class="nav-carta" href="./paginas/marisa.html">
+                    <figure class="waifu-pic"><img class="pic" style="height: 130%;" src="./assets/waifus/marisa1.jpeg"></img></figure>
+                    <p class="resumo"> Marisa Kirisame é uma maga humana que se especializa em magias de luz e calor, atualmente reside na Floresta da Magia e tem uma mania compulsiva em coletar coisas.</p>
+                    <footer class="tags">
+                        <a href="testeTAG">Feiticeira</a>
+                        <span>Feiticeira</span>
+                        <a href="testeTAG">Touhou</a>
+                        <span>Touhou</span>
+                    </footer>
+                </a>
+            </article>
+            <!-- Carta Asuka Langley -->
+            <article id="e" class="carta" href="Asuka">
+                <a class="nav-carta" href="./paginas/asuka.html">
+                    <figure class="waifu-pic"><img class="pic" style="height: 110%;" src="./assets/waifus/asuka1.jpg"></img></figure>
+                    <p class="resumo"> Designada como a Segunda Criança do Projeto de Instrumentalização Humana e piloto da Unidade Evangelion 02, Asuka tem personalidade forte, sendo muitas vezes verbalmente abusiva com os outros.</p>
+                    <footer class="tags">
+                        <a href="#tsundere">Tsundere</a>
+                        <span>Tsundere</span>
+                        <a href="testeTAG">Evangelion</a>
+                        <span>Evangelion</span>
+                    </footer>
+                </a>
+            </article>
+            <!-- Demais cartas presentes na lista/baralho END -->
+            <article id="wpic" class="bkgrd"><a name="waifus"></a></article>
+            <!-- Parágrafo introdução -->
+            <p class="intro"> Para mais informações sobre as waifus clique na carta correspondente abaixo, nas páginas específicas você também tem a opção de se inscrever para o fã-clube de alguma das waifus ou passar pela nossa galeria para admirar as melhores fan-arts selecionadas de cada uma delas. </p>
+        </section> 
+    </main>
+    <!-- Corpo da página PT.2: A classe agora é outra -->
+    <main class="paginamid">
+        <span style="visibility: hidden;"> Esse span une os dois seguimentos da página </span>
+        <!-- Faixa dando inicio ao tópico do texto -->
+        <div class="divisao" style="background:steelblue;">
+            <h2 align="center"> Mas qual é exatamente o propósito desse site? </h2>
+        </div>
+        <!-- Textinho explicando sobre o site -->
+        <p align="center" class="§ini"> Nosso propósito é mostrar para as outras pessoas o verdadeiro significado do que é uma Waifu e principalmente conseguir uma boa nota semestral na disciplina de Introdução à Computação com esse site maravilhoso que está diante de vocês, caros usuários, de qualquer forma esse site serve meio que como uma lista das garotas de anime (com excessão da Marisa que é de uma série de jogos kk) favoritas do pessoal que desenvolveu isso aqui, até porque, não existe tema melhor que esse. </p>
+        <!-- Textinho explicando o conceito de Waifu -->
+        <h3 style="text-align:center;margin-top:60px;">Afinal, o que é uma Waifu?</h3>
+        <p align="center" class="§ini">  Finalmente chegamos nas perguntas importantes, não é? Bom, primeiramente o termo <i>"Waifu"</i> atualmente é amplamente utilizado entre os fãs de animes, mangás ou jogos para se referir à uma personagem fictícia geralmente do sexo feminino pela qual sente-se uma grande quantidade de afeição (podendo ou não ser platônica) ou admiração por.</p>
+        <!-- Esquete rápida com o papa -->
+        <section style="margin-bottom:5rem;width:100%;height:38rem;">
+            <!-- Foto do papa -->
+            <figure style="margin:0;background:url('./assets/papa.jpeg') 50% no-repeat;background-size:cover;width:100%;height:100%;">
+                <!-- Filtro -->
+                <figure style="padding:0;margin:0;width:100%;height:100%;background:#383838;opacity:0.4;"></figure>
+            </figure>
+            <!-- Texto sobre foto -->
+            <div align="center" style="position:absolute;width: 100%;margin-top:-32rem;text-shadow: 0.25rem 0.5rem 0.35rem rgba(0, 0, 0, 0.3);">
+            <h2 align="center" style="font-size:3rem;max-width:75%;color:whitesmoke;">Até mesmo o Papa Francisco tem sua própria Waifu!</h2>
+            <h2 align="center" style="margin-top:-25px;font-size:1.5rem;max-width:60%;color:whitesmoke;">O que está esperando? Vire otaco você também!</h2>
+            </div>
+        </section>
+        <!-- Tabela de comparação das waifus -->
+        <section style="overflow-x:auto; padding-top: 0.5rem; padding-bottom: 0.5rem;">
+            <table class="tabela-waifu">
+                <a name="tabela"></a>
+                <!-- Cabeçalho da tabela -->
+                <thead titulo="Tabela de comparação das waifus">
+                    <tr>
+                        <th><b>Waifu</b></th>
+                        <th>anime</th>
+                        <th>Genero</th>
+                        <th>Idade</th>
+                        <th>Raça</th>
+                    </tr>
+                </thead>
+                <!-- Corpo da tabela -->
+                <tbody>
+                    <tr>
+                        <td><b>Asuka Langley</b></td>
+                        <td>Neon Genesis</td>
+                        <td>Feminino</td>
+                        <td>28 (EVA 3.33)</td>
+                        <td>Humana</td>
+                    </tr>
+                    <tr>
+                        <td><b>Marisa Kirisame</b></td>
+                        <td>Touhou</td>
+                        <td>Feminino</td>
+                        <td>Desconhecida</td>
+                        <td>Humana</td>
+                    </tr>
+                    <tr>
+                        <td><b>Rukia Kuchiki</b></td>
+                        <td>Bleach</td>
+                        <td>Feminino</td>
+                        <td>150 anos</td>
+                        <td>Shinigami</td>
+                    </tr>
+                    <tr>
+                        <td><b>Yoruichi Shihōin</b></td>
+                        <td>Bleach</td>
+                        <td>Feminino</td>
+                        <td>500 anos</td>
+                        <td>Alma</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Faixa dando deixa para falarmos das tags -->
+        <div class="divisao" style="margin-top: 4rem;background:steelblue;">
+            <h2 align="center"> Mas o que são aquelas etiquetas na carta da minha Waifu? </h2>
+        </div>
+        <!-- Texto de destino das ancoras das tags, explicando um pouco sobre cada uma -->
+        <article align="center" style="padding-bottom: 3rem;">
+            <a name="tags"></a>
+            <p align="center" class="§ini"> As <i>etiquetas</i> servem para mostrar pontos importantes da sua <i>Waifu</i> como pontos de sua personalidade, poderes,características, etc. Elas são importantes para destacar as principais características da sua <i>waifu</i></p>
+            <h3 style="text-align:center;margin-top:60px;">As Etiquetas</h3>
+            <ul style="margin-top: -2rem;padding-left: 0;">
+                <li style="display: inline;">
+                    <p align="center" style="text-align:justify;" class="§ini"> <b><a name="tsundere"></a> <span style="user-select:none;">• </span> Tsundere: </b> Tsundere (ツンデレ?) é um termo japonês para uma personalidade que é inicialmente agressiva, que alterna com uma outra mais amável. Tsundere é uma combinação de duas palavras, tsuntsun (ツンツン?) e deredere (デレデレ?). Tsuntsun é a onomatopeia para "frio, brusco", e deredere significa "tornar-se amável/amoroso". Tsundere é um dos arquétipos mais comuns de personalidades personagens femininos e interesses românticos em histórias de animes e mangá. Outros exemplos de personagens com as mesmas características incluem: Taiga Aisaka de <i>Toradora</i>, Chitoge Kirisaki de <i>Nisekoi</i>, Kirino Kosaka de <i>Oreimo</i>, Sena Kashiwazaki de <i>Haganai</i>, Kurisu Makise de <i>Steins;Gate</i>, e Misaka Mikoto da série <i>Toaru/Raildex</i>. </p>
+                </li>
+                <li style="display: inline;">
+                    <p align="center" style="margin-top:-3rem;text-align:justify;" class="§ini"> <b><a name="tomboy"></a> <span style="user-select:none;">• </span> Tomboy: </b> Tomboy é uma garota que apresenta características e comportamentos ou expressão de gênero tipicamente vistos como por estereótipo de natureza masculina, por exemplo preferência por atividades que envolvam elevada competitividade ou força física (tais como esportes diversos ou lutas), como também preferência por roupas consideradas pouco femininas. Outros exemplos de personagens com as mesmas características incluem: Mikasa Ackerman de <i>Shingeki no Kyojin</i>, Seishirou Tsugumi de <i>Nisekoi</i>, Winry Rockbell de <i>Fullmetal Alchemist</i>, Ryuko de <i>Kill La Kill</i>, sailor Mercury de <i>Sailor Moon</i>, Yozora Mikazuki de <i>Haganai</i>, e Misaka Mikoto da série <i>Toaru/Raildex</i>. </p>
+                </li>
+                <li style="display: inline;">
+                    <p align="center" style="margin-top:-3rem;text-align:justify;" class="§ini"> <b><a name="shinigami"></a> <span style="user-select:none;">• </span> Shinigami: </b> Shinigami (死神) é um termo usado no Japão para descrever entidades sobrenaturais presentes na mitologia japonesa, psicopompos atribuídos à personificação da morte. Descritas como entidades antropomórficas, os shinigamis não possuem uma representação estereotipada e a sua figura foi evoluindo para a representação de toda uma raça de psicopompos, cujos atributos específicos diversificam tanto como nos vampiros do ocidente. Os shinigamis estão vinculados em descrições presentes na religião, literatura e cultura popular japonesas. No contexto do anime <i>Bleach</i> temos shinigamis como os guardiões das almas que passam pelo círculo de transmigração entre os mundos . No passado eram conhecidos como <i>Balancers</i> (<i>調整者 (バランサー) Baransā</i>; inglês para "<i>balanceador</i>", japonês para "<i>coordenador</i>"). Eles são considerados o oposto dos <i>quincy</i>. </p>
+                </li>
+                <li style="display: inline;">
+                    <p align="center" style="margin-top:-3rem;text-align:justify;" class="§ini"> <b><a name="onmitsukidō"></a> <span style="user-select:none;">• </span> Onmitsukidō: </b> Onmitsukidō (隠密机动, <i>táticas secretas</i>, chamado de <i>Força Furtiva</i> na versão em Inglês), No contexto do anime Bleach também chamado de Unidade Secreta Móvel / <i>Corps</i> , forças especiais ou <i>Covert Ops</i>, é a segunda maior organização a qual <i>Shinigamis</i> costumam aderir, e um dos três ramos principais de militar na <i>Soul Society</i>. </p>
+                </li>
+            </ul>
+        </article>
+        <!-- Rodapé com créditos -->
+        <footer style="margin-bottom: 2.5rem; width: 100%; height: 10px; border-bottom: 2px dotted rgba(0, 0, 0, 0.2);"></footer>
+        <h3 class="creditos"> Feito por Samuel Henrique e João Cavalari - 1º BCC de 2020</h3>
+    </main>
+</body>
+</html>
